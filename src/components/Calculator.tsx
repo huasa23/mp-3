@@ -7,19 +7,39 @@ const CalculatorMain = styled.div`
   flex-direction: column;
   padding: 1vh 0;
   border: 1px solid black;
+  
 `;
 const CalculatorInput = styled.div`
   display: flex;
   flex-direction: row;
 `;
 
+const CalculatorLabel = styled.label`
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: calc(1px + 1vw);
+  width: 13%;
+  margin: 1vh 0;
+  display: flex; 
+  align-items: center; 
+  text-align: center;
+  justify-content: center;
+`;
+
 const CalculatorFirstNumber = styled.input`
-  width: 25%;
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 12%;
   margin: 1vh 1vw;
 `;
 
 const CalculatorSecondNumber = styled.input`
-  width: 25%;
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 15%;
   margin: 1vh 1vw;
 `;
 const CalculatorOutput = styled.div`
@@ -28,12 +48,22 @@ const CalculatorOutput = styled.div`
 `;
 
 const CalculatorButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(1px + 1vw);
   width: 5%;
   margin: 1vh 1vw;
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
 `;
 
 const CalculatorResult = styled.h3`
-    margin: 1vh 1vw;
+    font-size: calc(1px + 1vw);
+  height: 1vh;
+  width: 5%;
+  margin: 1vh 1vw;
 `;
 
 function useCalculatorRefs() {
@@ -110,13 +140,13 @@ export default function Calculator() {
   return (
     <CalculatorMain>
         <CalculatorInput>
+          <CalculatorLabel>First Number</CalculatorLabel>
           <CalculatorFirstNumber
             ref={firstNumberRef}
-            placeholder="Enter first number"
           />
+          <CalculatorLabel>Second Number</CalculatorLabel>
           <CalculatorSecondNumber
             ref={secondNumberRef}
-            placeholder="Enter second number"
           />
           <CalculatorButton onClick={() => useCalculateButtonClick("+")}>
             +
